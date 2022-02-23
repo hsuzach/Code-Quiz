@@ -20,6 +20,11 @@ let runningQuestion = 0;
 const result = document.getElementById("result");
 let recordScore = document.getElementById("save-scores");
 let playerScore = document.getElementById("player-score");
+let initials = document.getElementById("initials");
+const submit = document.getElementById("submit");
+
+let highScores = document.getElementById("high-scores");
+
 
 //Create Question List
 let questions = [
@@ -124,9 +129,6 @@ function hideresult(){
   result.textContent = " "
 }
 
-
-
-
 //check answer for right or wrong
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
@@ -149,9 +151,21 @@ function checkAnswer(answer){
     }
 }
 
+//allows user to save score
 function endQuiz(){
   quiz.setAttribute("style","display: none");
   recordScore.setAttribute("style","display: block")
   score = timeRemaining
-  playerScore.textContent = "Score:" + score
+  playerScore.textContent = "Score:" + score;
+}
+
+submit.addEventListener("click", saveScore);
+
+
+function saveScore(){
+  highScores.setAttribute("style","display: block");
+  recordScore.setAttribute("style","display: none");
+  
+
+
 }
