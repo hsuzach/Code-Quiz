@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Code Quiz</title>
   <link rel="stylesheet" href="./assets/style/style.css">
   
 </head>
@@ -52,6 +52,7 @@
     <p>Input your initials to save your score!</p>
 
     <div id="record-name">
+      <label for="initials">Initials Here:</label>
       <input type="text" name="initials" id="initials">
     </div>
 
@@ -62,10 +63,20 @@
   </div>
  
   <div id="high-scores" style="display: none">
-    <p>This is a test</p>
-    <div id="saved-initials"></div>
-    <div id="saved-scores"></div>
     
+    <p>High Scores</p>
+    
+    <div class="previoushighscores container" style="display: flex">
+      <label for="saved-initials">Initials</label>
+      <ol id="saved-initials">
+        
+      </ol>
+      <label for="saved-scores">Score</label>
+      <ol id="saved-scores">
+        
+      </ol>
+    </div>
+
     <br>
 
     <button id="go-back">Go Back</button>

@@ -24,7 +24,8 @@ let initials = document.getElementById("initials");
 const submit = document.getElementById("submit");
 
 let highScores = document.getElementById("high-scores");
-
+let savedInitials = document.getElementById("saved-initials");
+let savedScores = document.getElementById("saved-scores")
 
 //Create Question List
 let questions = [
@@ -162,10 +163,18 @@ function endQuiz(){
 submit.addEventListener("click", saveScore);
 
 
-function saveScore(){
+function saveScore(event){
+  event.preventDefault();
+  
   highScores.setAttribute("style","display: block");
   recordScore.setAttribute("style","display: none");
   
+  
+  let playerInitials = initials.value;
+  let playerScores = score;
 
+  
+  
+  
 
 }
