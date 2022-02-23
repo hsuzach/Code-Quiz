@@ -4,6 +4,8 @@ const startPage = document.getElementById("start-page")
 let timeleft = document.getElementById("timer-count")
 let seconds = 75
 let timer
+let score
+let timeRemaining
 
 
 const quiz = document.getElementById("quiz");
@@ -16,7 +18,8 @@ let runningQuestion = 0;
 
 
 const result = document.getElementById("result");
-const recordScore = document.getElementById("save-scores");
+let recordScore = document.getElementById("save-scores");
+let playerScore = document.getElementById("player-score");
 
 //Create Question List
 let questions = [
@@ -67,8 +70,8 @@ let questions = [
 //Start Button Begins the Quiz
 startButton.addEventListener('click', startQuiz);
 function startQuiz(){
-  startPage.setAttribute("style", "display: none")
-  quiz.setAttribute("style", "display: block")
+  startPage.setAttribute("style", "display: none");
+  quiz.setAttribute("style", "display: block");
   startTimer();
   renderQuestion();
 }
@@ -98,14 +101,11 @@ function renderQuestion(){
   choiceD.innerHTML = q.choiceD;
 }
 
-//check answer if correct or incorrect
+//check for last question of the quiz
 const lastQuestion = questions.length - 1;
 
-//hides the answer result in 4 seconds
-function hideresult(){
-  result.textContent = " "
-}
 
+//set correct or wrong functions
 function answerIsCorrect(){
   result.textContent = "Correct";
   setTimeout(hideresult, 4000);
@@ -119,6 +119,15 @@ function answerIsWrong(){
 }
 
 
+//hides the answer result in 4 seconds
+function hideresult(){
+  result.textContent = " "
+}
+
+
+
+
+//check answer for right or wrong
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
         answerIsCorrect();
@@ -130,14 +139,19 @@ function checkAnswer(answer){
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
-    }else{
-        endQuiz();
+    }
+    else{
         clearInterval(timer);
-        
+        timeRemaining = seconds
+        //update time shown in timer
+        timeleft.textContent = seconds
+        endQuiz();
     }
 }
 
 function endQuiz(){
   quiz.setAttribute("style","display: none");
-  recordScore.setAttribute("style", "display: block");
+  recordScore.setAttribute("style","display: block")
+  score = timeRemaining
+  playerScore.textContent = "Score:" + score
 }
