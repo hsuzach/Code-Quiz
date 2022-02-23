@@ -17,7 +17,8 @@
   </div>
 
   <div id="start-page">
-    <p>Welcome to Zach's Coding Quiz</p>
+    <h4>Try to answer the following code-relate qusetions within the time limit. Keep in mind that incorrect answers will
+    penalize your score/time by ten seconds.</h4>
     
     <button id="start-button">Start Quiz</button>
 
@@ -25,24 +26,26 @@
 
   <div id="quiz" style="display: none">
   
-    <div id="question">Try to answer the following code-relate qusetions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds.</div>
+    <div id="question">Test</div>
   
     <div id="choices">
   
-      <div class="choice" id="A"></div>
+      <div class="choice" id="A" onclick="checkAnswer('A')"></div>
   
-      <div class="choice" id="B"></div>
+      <div class="choice" id="B" onclick="checkAnswer('B')"></div>
   
-      <div class="choice" id="C"></div>
+      <div class="choice" id="C" onclick="checkAnswer('C')"></div>
 
-      <div class="choice" id="D"></div>
+      <div class="choice" id="D" onclick="checkAnswer('D')"></div>
   
     </div>
 
+  <br>
 
-  <div class="save-scores">
+  <div id="result"></div>
 
 
+  <div id="save-scores" style="display: none">Finished!
   </div>
  
   
