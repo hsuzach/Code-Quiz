@@ -86,8 +86,11 @@ function startTimer(){
     seconds--;
     timeleft.textContent = seconds;
     
-    if (seconds === 0){
+    if (seconds <= 0){
       clearInterval(timer);
+      seconds = 0;
+      timeRemaining = 0;
+      timeleft.textContent = 0;
       endQuiz();
     }
   }, 1000)
@@ -207,4 +210,5 @@ function returnToStart(){
   seconds = 75
   timeleft.textContent = 75
   runningQuestion = 0;
+  initials.value = ""
 }

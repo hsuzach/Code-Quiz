@@ -1,8 +1,75 @@
+*{
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
 .timer {
   border: 2px solid black;
   display: flex;
   padding: 2px;
-  width: 60px;
+  width: 70px;
 }
 
+button {
+  background-color: rgb(87, 87, 251);
+  color: aliceblue;
+  font-size: 16px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-color: rgb(0, 0, 0);
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+}
 
+.intro{
+  border: 3px solid;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(224, 239, 251);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+
+  max-width: 600px
+  
+  ;
+}
+
+.container{
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  
+}
+
+.choice{
+  border: 2px solid;
+  padding: 5px;
+  display: inline;
+  background-color: rgb(225, 194, 255);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+ol{
+  justify-content: center;
+  display: table;
+  margin: auto;
+  border: 2px solid;
+  padding-top: 10px;
+  max-width: 100px;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

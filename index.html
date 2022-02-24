@@ -17,15 +17,18 @@
   </div>
 
   <!-- page shown at beginning with explanation and start button -->
-  <div id="start-page">
-    <h4>Try to answer the following code-relate qusetions within the time limit. Keep in mind that incorrect answers will
-    penalize your score/time by ten seconds.</h4>
+  <div id="start-page" >
+    <h1 style="text-align: center;">Code Quiz!</h1>
+    <div  class="intro" class="container">
+      <h4>Try to answer the following code-relate questions within the time limit. Keep in mind that incorrect answers will
+      penalize your score/time by ten seconds.</h4>
+    </div>
     
     <button id="start-button">Start Quiz</button>
   </div>
 
   <!-- quiz content, showing questions and answer options -->
-  <div id="quiz" style="display: none">
+  <div id="quiz" class= "container" style="display: none">
     <div id="question"></div>
     <div id="choices">
       <div class="choice" id="A" onclick="checkAnswer('A')"></div>
@@ -41,7 +44,7 @@
 
   <br>
   <!-- section to input ur initials into high score page -->
-  <div id="save-scores" style="display: none">
+  <div id="save-scores" class="container" style="display: none">
     <h4>Input your initials to save your score!</h4>
 
     <div id="record-name">
@@ -55,12 +58,12 @@
     
   </div>
   <!-- section displaying previous high scores  -->
-  <div id="high-scores" style="display: none">
+  <div id="high-scores" class="container" style="display: none">
     <h2>High Scores</h2>
     
-    <div class="previoushighscores container" >
+    <div class="previoushighscores container center" >
       <div for="saved-initials">Initials</div>
-      <ol id="saved-initials"></ol>
+      <ol id="saved-initials" style></ol>
     </div>
 
     <br>
