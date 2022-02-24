@@ -23,7 +23,8 @@ const submit = document.getElementById("submit");
 
 let highScores = document.getElementById("high-scores");
 let savedInitials = document.getElementById("saved-initials");
-let savedScores = document.getElementById("saved-scores")
+let goBack = document.getElementById("go-back");
+let resetScores = document.getElementById("reset-scores");
 
 //Create Question List
 let questions = [
@@ -189,4 +190,21 @@ function saveScore(){
     <hr>
     `
   })
+}
+
+//reset scores button clears local storage and resets display of scores
+resetScores.addEventListener('click', clearScores)
+function clearScores(){
+  localStorage.clear();
+  savedInitials.innerHTML = ""
+}
+
+//return to start page, reset timer as well as current question to start quiz again
+goBack.addEventListener('click', returnToStart)
+function returnToStart(){
+  startPage.setAttribute("style", "display: block");
+  highScores.setAttribute("style","display: none");
+  seconds = 75
+  timeleft.textContent = 75
+  runningQuestion = 0;
 }

@@ -10,74 +10,62 @@
 </head>
 
 <body>
-
+  <!-- timer that countsdown as quiz begins -->
   <div class="timer">
     <div class="timer-text">Time: </div>
     <div id="timer-count">75</div>
   </div>
 
+  <!-- page shown at beginning with explanation and start button -->
   <div id="start-page">
     <h4>Try to answer the following code-relate qusetions within the time limit. Keep in mind that incorrect answers will
     penalize your score/time by ten seconds.</h4>
     
     <button id="start-button">Start Quiz</button>
-
   </div>
 
+  <!-- quiz content, showing questions and answer options -->
   <div id="quiz" style="display: none">
-  
     <div id="question"></div>
-  
     <div id="choices">
-  
       <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-  
       <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-  
       <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-
       <div class="choice" id="D" onclick="checkAnswer('D')"></div>
-  
     </div>
+    
     <br>
+    <!-- showing if user got an answer correct or wrong -->
     <div id="result"></div>
   </div>
 
   <br>
-
-  
-
-
+  <!-- section to input ur initials into high score page -->
   <div id="save-scores" style="display: none">
-    <p>Input your initials to save your score!</p>
+    <h4>Input your initials to save your score!</h4>
 
     <div id="record-name">
       <label for="initials">Initials Here:</label>
       <input type="text" name="initials" id="initials">
     </div>
-
+    
     <div id="player-score"></div>
-
+    
     <button id="submit">Submit</button>
     
   </div>
- 
+  <!-- section displaying previous high scores  -->
   <div id="high-scores" style="display: none">
-    
-    <p>High Scores</p>
+    <h2>High Scores</h2>
     
     <div class="previoushighscores container" >
-      <label for="saved-initials">Initials</label>
-      <ol id="saved-initials">
-        
-      </ol>
-      
+      <div for="saved-initials">Initials</div>
+      <ol id="saved-initials"></ol>
     </div>
 
     <br>
-
     <button id="go-back">Go Back</button>
-    <button id="reset-score">Reset Scores</button>
+    <button id="reset-scores">Reset Scores</button>
 
   </div>
   
