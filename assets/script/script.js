@@ -187,9 +187,10 @@ function saveScore(){
 
   //displays scores on high score page
   orderedStoredScores.forEach (x => {
-    savedInitials.innerHTML += `
+    savedInitials.innerHTML += `<li>
     ${x.initials}
     ${x.score}
+    </li>
     <hr>
     `
   })
