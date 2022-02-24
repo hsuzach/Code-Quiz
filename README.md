@@ -2,7 +2,7 @@
 
 This goal of this assignment was to create a timed multiple choice quiz.
 
-This application can be visited at: 
+This application can be visited at: https://hsuzach.github.io/Code-Quiz/
 
 ![image](https://user-images.githubusercontent.com/30445082/155483880-4a76481b-4e8d-4e4d-a2ed-8f33b748899a.png)
 
