@@ -7,7 +7,6 @@ let timer
 let score
 let timeRemaining
 
-
 const quiz = document.getElementById("quiz");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
@@ -15,7 +14,6 @@ const choiceC = document.getElementById("C");
 const choiceD = document.getElementById("D");
 let question = document.getElementById("question");
 let runningQuestion = 0;
-
 
 const result = document.getElementById("result");
 let recordScore = document.getElementById("save-scores");
@@ -72,7 +70,6 @@ let questions = [
     }
 ];
 
-
 //Start Button Begins the Quiz
 startButton.addEventListener('click', startQuiz);
 function startQuiz(){
@@ -85,7 +82,6 @@ function startQuiz(){
 //Time remaining displayed
 function startTimer(){
   timer = setInterval(function() {
-    
     seconds--;
     timeleft.textContent = seconds;
     
@@ -110,7 +106,6 @@ function renderQuestion(){
 //check for last question of the quiz
 const lastQuestion = questions.length - 1;
 
-
 //set correct or wrong functions
 function answerIsCorrect(){
   result.textContent = "Correct";
@@ -124,7 +119,6 @@ function answerIsWrong(){
   seconds -= 10;
 }
 
-
 //hides the answer result in 4 seconds
 function hideresult(){
   result.textContent = " "
@@ -136,14 +130,12 @@ function checkAnswer(answer){
         answerIsCorrect();
     }else{
         answerIsWrong();
-    }
-    
-    ;
+    };
+
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
-    }
-    else{
+    } else{
         clearInterval(timer);
         timeRemaining = seconds
         //update time shown in timer
@@ -157,24 +149,44 @@ function endQuiz(){
   quiz.setAttribute("style","display: none");
   recordScore.setAttribute("style","display: block")
   score = timeRemaining
-  playerScore.textContent = "Score:" + score;
+  playerScore.textContent = "Score: " + score;
 }
 
 submit.addEventListener("click", saveScore);
 
-
-function saveScore(event){
-  event.preventDefault();
+function saveScore(){
   
   highScores.setAttribute("style","display: block");
   recordScore.setAttribute("style","display: none");
-  
-  
-  let playerInitials = initials.value;
-  let playerScores = score;
 
+  let quizResult = {
+    score: score,
+    initials: initials.value
+  }
   
-  
-  
+  //adds new scores to local storage
+  if (localStorage.getItem('HighScores')){
+    let storedScores = JSON.parse(localStorage.getItem('HighScores'));
+    storedScores.push(quizResult);
+    localStorage.setItem('HighScores', JSON.stringify(storedScores));
+  }else {
+    let storedScores = []
+    storedScores.push(quizResult);
+    localStorage.setItem('HighScores', JSON.stringify(storedScores));
+  }
 
+  //reorders list of previous scores from higest score to lowest
+  let storedScores = JSON.parse(localStorage.getItem('HighScores'))
+  let orderedStoredScores = storedScores.sort((a,b) =>{
+    return b.score - a.score
+  })
+
+  //displays scores on high score page
+  orderedStoredScores.forEach (x => {
+    savedInitials.innerHTML += `
+    ${x.initials}
+    ${x.score}
+    <hr>
+    `
+  })
 }
