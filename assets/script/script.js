@@ -173,11 +173,14 @@ function saveScore(){
     let storedScores = JSON.parse(localStorage.getItem('HighScores'));
     storedScores.push(quizResult);
     localStorage.setItem('HighScores', JSON.stringify(storedScores));
+    
   }else {
     let storedScores = []
     storedScores.push(quizResult);
     localStorage.setItem('HighScores', JSON.stringify(storedScores));
+    
   }
+  
 
   //reorders list of previous scores from higest score to lowest
   let storedScores = JSON.parse(localStorage.getItem('HighScores'))
@@ -186,6 +189,7 @@ function saveScore(){
   })
 
   //displays scores on high score page
+  savedInitials.innerHTML = '';
   orderedStoredScores.forEach (x => {
     savedInitials.innerHTML += `<li>
     ${x.initials}
@@ -194,6 +198,7 @@ function saveScore(){
     <hr>
     `
   })
+  
 }
 
 //reset scores button clears local storage and resets display of scores
