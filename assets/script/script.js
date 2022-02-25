@@ -61,7 +61,7 @@ let questions = [
         choiceD : "Parentheses",
         correct : "C"
     },{
-        question : "A very useful tool used during development and debugging for printing content to the ddebugger is:",
+        question : "A very useful tool used during development and debugging for printing content to the debugger is:",
 
         choiceA : "JavaScript",
         choiceB : "Terminal/Bash",
